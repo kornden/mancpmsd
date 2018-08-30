@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124434035-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-124434035-1');
+        </script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'cpmsdblog/styles.css' %}">
+        <title>Маньківський ЦПМСД</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    </head>
+    
+    <body>
+        <header>
+            <div id="cpmsdLogo"><img  src="{% static 'cpmsdblog/logo.png' %}" alt="cpmsd logo"></div> 
+            <div id="cpmsdName"><h3>Комунальне некомерційне підприємтсво <br> <q>Маньківський центр первинної медико-санітарної допомоги Маньківської районної ради</q></h3></div>
+            <div id="shortName"> Маньківський ЦПМСД </div>
+            <div id="ownerLogo"><img src="{% static 'cpmsdblog/mankivka_logo.png' %}" alt="mankivka_logo"></div>
+        </header>
+        <nav>
+            <ul id="navbar">
+               <li class="navbarItem"><a href="{% url 'cpmsdblog' %}">Головна</a></li>
+                <li class="navbarItem"><a href="{% url 'doctors' %}">Лікарі</a></li>
+                <li class="navbarItem"><a href="{% url 'units' %}">Підрозділи</a></li>
+                <li class="navbarItem"><a href="{% url 'freedrugs' %}">Наявні ліки</a></li>
+            </ul>
+        
+            <ul id="sidebar">
+                <li><a href="https://dozorro.org/tender/search/?edrpou=41777601">Ми на Прозорро</a></li>
+                <li><a href="https://eliky.in.ua/">Є ліки</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% if latest_post_list %}
+                {% for post in latest_post_list %}
+                    <article>
+                        <h1 class="title"> {{post.post_title}}</h1>
+                        <p class="text"> {{post.post_text}}</p>
+                    </article>
+                {% endfor %}
+            {% endif %}
+            
+            {% if doctors_list %}
+                {% for doctor in doctors_list %}
+                    <article class="doctor">
+                        <img src="{{ doctor.photo.url }}" class="photo">
+                        <div class="description_doctor">
+                            <h1 class="title"> {{doctor.name}}</h1>
+                            <p class="text"> {{doctor.specialization}}</p>
+                            <p class="education">Навчальний заклад: {{doctor.education}}, {{doctor.end_year}}</p>
+                            <p class="qualification">Категорія: {{doctor.qualification}}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            {% endif %}
+            {% if drug_list %}
+                    <table>
+                        <tr> 
+                            <th>Торгова назва</th>
+                            <th>Опис</th>
+                            <th>Форма</th>
+                            <th>Кількість</th>
+                            <th>Дата оновлення</th>
+                        </tr>
+           
+                        {% for drug in drug_list %}
+                            <tr>
+                                <th>{{drug.drug_name}}</th>
+                                <th>{{drug.drug_form}}</th>
+                                <th>{{drug.drug_quantity_type}}</th>
+                                <th>{{drug.drug_quantity}}</th>
+                                <th>{{drug.drug_date_updated}}</th>
+                            </tr>
+                    
+                        {% endfor %}
+                    </table>
+            {% endif %}
+            {% if unit_list %}
+            <ol>
+                {% for unit in unit_list %}
+                    <li> <h3>{{unit.name}}</h3>
+                       <p> Адреса: {{unit.address}}</p>
+                        <p>Телефон: {{unit.phone}}</p>
+                    </li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+        </main>
+        <footer>Комунальне некомерційне підприємство "Маньківський центр первинної медико-санітарної допомоги Маньківської районної ради" 2018 
+             <br> <a href="http://freedns.afraid.org/">Free DNS</a> </footer>
+    </body>
+</html>

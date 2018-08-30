@@ -1,0 +1,226 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 85%;
+    font-size: small;
+    font-family: sans-serif;
+    line-height: 1.6em;
+}
+
+header{
+    line-height: 2em;
+    background-color: aliceblue;
+    border-radius: 15px;
+    text-align: center;
+    font-size: x-large;
+}
+
+#cpmsdLogo{
+    display: none;
+}
+#cpmsdName{
+        display: none;
+    }
+
+#ownerLogo{
+    display: none;
+  
+}
+nav a{
+    color: #212121;
+    display: block;
+    padding: 24px 16px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: xx-large;
+    border-style: solid;
+    border-color: black;
+    
+}
+nav a:hover{
+    background-color: #00BCD4;
+    color: #FFFFFF;
+}
+#navbar {
+    list-style-type: none;
+    padding: 16px;
+    overflow: hidden;
+    background-color: #F1F1F1;
+    position: sticky;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+    width: 100%;
+    font-size: x-large;
+    text-align: center;
+}
+
+#sidebar {
+    display: none;
+}
+main {
+    padding: 16px;
+    margin: 16px 10px 10px 16px;
+}
+article{
+    background-color: aliceblue;
+    padding: 16px;
+    margin: 16px;
+    height: auto;
+}
+.photo{
+    width: 150px;
+    float: left;
+    padding: 30px;
+}
+.text {
+    font-size: medium;
+}
+time {
+    float: right;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    text-align: left;
+}
+table {
+    width: 100%;
+    border-spacing: 5px;
+}
+tr:nth-child(even) {
+    background-color: aquamarine;
+}
+tr:nth-child(odd) {
+    background-color: azure;
+}
+footer{
+    text-align: center;
+    padding: 0px 32px;
+}
+@media screen and (min-width: 768px){
+    
+    body{
+        width: 100%;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    header{
+        height: auto;
+        padding: 16px;
+        background-color: aliceblue;
+        border-radius: 15px;
+        
+    }
+    #cpmsdName{
+        position: relative;
+        bottom: 26px;
+        font: bold;
+        width: 70%;
+        display: inline-block;
+        padding: 16px ;
+        line-height: 1.5em;
+    }
+    #shortName{
+        display: none;
+    }
+
+    #cpmsdLogo{
+        width: 10%;
+        padding: 16px;
+        display: inline-block;        
+    }
+    #ownerLogo{
+        width: 10%
+        padding: 16px;
+        display: inline-block;  
+    }
+    nav a{
+        color: #212121;
+        display: block;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-style: none;
+        font-size: large;
+    
+    }
+    nav a:hover{
+        background-color: #00BCD4;
+        color: #FFFFFF;
+    }
+    #navbar {
+        list-style-type: none;
+        padding: 16px;
+        overflow: hidden;
+        background-color: #F1F1F1;
+        position: sticky;
+        position: -webkit-sticky; /* Safari */
+        top: 0;
+        width: 100%;
+    }
+    .navbarItem{
+        float:left;
+    }
+    #sidebar {
+        display: block;
+        list-style-type: none;
+        margin: 16px 16px 16px 0px;
+        padding: 0px;
+        background-color: #F1F1F1;
+        width: 150px;
+        float:left;
+        height: 100%;
+    }
+    main {
+        padding: 16px;
+        margin: 16px 10px 10px 166px;
+    }
+    .doctor{
+        display: inline-block;
+        background-color: aliceblue;
+        padding: 16px;
+        height: auto;
+        clear: left;
+    }
+  
+    .photo{
+        display: inline-block;
+        height: 25%;
+        float: left;
+        padding: 16px;
+    }
+    .description_doctor{
+        display: inline-block;
+    }
+    .text {
+        font-size: medium;
+    }
+    time {
+        float: right;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 15px;
+    }
+    th {
+        text-align: left;
+    }
+    table {
+        width: 100%;
+        border-spacing: 5px;
+    }
+    tr:nth-child(even) {
+        background-color: aquamarine;
+    }
+    tr:nth-child(odd) {
+        background-color: azure;
+    }
+}
+

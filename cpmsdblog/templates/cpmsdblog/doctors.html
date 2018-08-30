@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'cpmsdblog/styles.css' %}">
+    </head>
+    
+    <body>
+        <header>
+            <img id="cpmsdLogo" src="{% static 'cpmsdblog/logo.png' %}" alt="cpmsd logo">
+            <h1 id="cpmsdName">Маньківський центр первинної медико-санітарної допомоги</h1>
+            <img id="ownerLogo" src="{% static 'cpmsdblog/mankivka_logo.png' %}" alt="mankivka_logo">
+        </header>
+        <nav>
+            <ul id="navbar">
+                <li class="navbarItem"><a href="{% url 'cpmsdblog' %}">Головна</a></li>
+                <li class="navbarItem"><a href="{% url 'doctors' %}">Лікарі</a></li>
+                <li class="navbarItem"><a href="{% url 'freedrugs' %}">Наявні ліки</a></li>
+            </ul>
+        
+            <ul id="sidebar">
+                <li><a href="https://dozorro.org/tender/search/?edrpou=41777601">Ми на Прозорро</a></li>
+                <li><a href="https://eliky.in.ua/">Є ліки</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% if doctors_list %}
+            {% for doctor in doctors_list %}
+            <article class="doctor">
+                <img src="{{ doctor.photo.url }}" class="photo">
+
+                <h1 class="title"> {{doctor.name}}</h1>
+                <p class="text"> {{doctor.specialization}}</p>
+                <p class="education">Навчальний заклад: {{doctor.education}}, {{doctor.end_year}}</p>
+                <p class="qualification">Категорія: {{doctor.qualification}}</p>
+            </article>
+            {% endfor %}
+            {% endif %}
+        </main>
+        <footer>Маньківський центр первинної медико-санітарної допомоги Маньківської районної ради 2018</footer>
+    </body>
+</html>
