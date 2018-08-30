@@ -1,0 +1,4 @@
+mancpmsd.sock
+mancpmsd_nginx.conf
+mancpmsd_uwsgi.ini
+uwsgi_params
