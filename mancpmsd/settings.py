@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'j%1g944*pg3(^_^@vh0oih(#0egy$o-d=ci5lxqzl%&jjer83+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
 ALLOWED_HOSTS = ['mankivkacpmsd.us.to', '192.168.2.66', '192.168.55.201']
 
